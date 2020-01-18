@@ -1,6 +1,8 @@
 import { NextApiRequest, NextApiResponse } from "next"
 import { MongoClient, Db } from "mongodb"
 
+import { EventDocument } from "../../../interfaces"
+
 let cachedDb: Db
 
 async function connectToDatabase(uri: string): Promise<Db> {
@@ -27,7 +29,7 @@ export default async (_: NextApiRequest, res: NextApiResponse) => {
      */
     const db = await connectToDatabase(process.env.CONNECTION_STRING)
     const collection = db.collection(process.env.COLLECTION_NAME)
-    const events = await collection
+    const events: EventDocument[] = await collection
       .find()
       .skip(0)
       .limit(10)

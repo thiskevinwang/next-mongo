@@ -3,17 +3,10 @@ import { useRouter } from "next/router"
 
 import Layout from "../../components/Layout"
 import { sampleFetchWrapper } from "../../utils/sample-api"
-
-interface Event {
-  _id: string
-  name: string
-  description: string
-  properties: string[]
-  platforms: string[]
-}
+import { EventDocument } from "../../interfaces"
 
 interface Props {
-  event?: Event
+  event?: EventDocument
 }
 
 const EventById: NextPage<Props> = ({ event }) => {
