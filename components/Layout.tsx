@@ -24,6 +24,10 @@ const Layout: React.FunctionComponent<Props> = ({
         |{" "}
         <Link href="/events">
           <a>Events</a>
+        </Link>{" "}
+        |{" "}
+        <Link href="/add">
+          <a>Add</a>
         </Link>
       </nav>
     </header>
