@@ -19,7 +19,7 @@ const Events: React.FC = () => {
   return (
     <Layout title="Event | Next.js">
       <h1>Analytics Events</h1>
-      <p>Here are our Analytics Events</p>
+      <p>All Events</p>
       {(Array.isArray(data) ? data : []).map((e, i) => (
         <div key={e._id} style={{ background: i % 2 === 0 ? "lightgrey" : "" }}>
           <Link href={`/events/${e._id}`}>{e.name}</Link>
