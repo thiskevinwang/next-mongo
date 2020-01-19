@@ -8,3 +8,15 @@ export type User = {
   id: number
   name: string
 }
+
+/**
+ * This is the shape of a single `document` in the
+ * `names` collection in the `analytics` mongo database.
+ */
+export interface EventDocument {
+  _id: string
+  name: string
+  description: string
+  properties?: string[]
+  platforms?: string[]
+}

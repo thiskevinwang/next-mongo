@@ -1,23 +1,15 @@
 import { NextPageContext, NextPage } from "next"
-import { useRouter } from "next/router"
+import Link from "next/link"
 
 import Layout from "../../components/Layout"
 import { sampleFetchWrapper } from "../../utils/sample-api"
-
-interface Event {
-  _id: string
-  name: string
-  description: string
-  properties: string[]
-  platforms: string[]
-}
+import { EventDocument } from "../../interfaces"
 
 interface Props {
-  event?: Event
+  event?: EventDocument
 }
 
 const EventById: NextPage<Props> = ({ event }) => {
-  const router = useRouter()
   return (
     <Layout>
       <div>
@@ -25,16 +17,20 @@ const EventById: NextPage<Props> = ({ event }) => {
           <div>
             <h1>{event.name}</h1>
             <p>{event.description}</p>
-            <div>
+            <div style={{ marginTop: `1rem`, marginBottom: `1rem` }}>
               <h2>Properties</h2>
               {event.properties?.map((e, i) => (
-                <code key={i}>{e}</code>
+                <code key={i} style={{ margin: `1rem` }}>
+                  {e}
+                </code>
               ))}
             </div>
-            <div>
+            <div style={{ marginTop: `1rem`, marginBottom: `1rem` }}>
               <h2>Platforms</h2>
               {event.platforms?.map((e, i) => (
-                <code key={i}>{e}</code>
+                <code key={i} style={{ margin: `1rem` }}>
+                  {e}
+                </code>
               ))}
             </div>
           </div>
@@ -42,9 +38,7 @@ const EventById: NextPage<Props> = ({ event }) => {
           <>Event not found</>
         )}
       </div>
-      <a href={undefined} onClick={() => router.back()}>
-        Go back
-      </a>
+      <Link href="/events">Back to Events</Link>
     </Layout>
   )
 }

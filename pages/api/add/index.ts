@@ -1,8 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next"
 import { MongoClient, Db } from "mongodb"
 
-import { EventDocument } from "../../../interfaces"
-
 let cachedDb: Db
 
 async function connectToDatabase(uri: string): Promise<Db> {
@@ -12,7 +10,7 @@ async function connectToDatabase(uri: string): Promise<Db> {
   }
   const client = await MongoClient.connect(uri, {
     useNewUrlParser: true,
-    // useUnifiedTopology: true,
+    useUnifiedTopology: true,
   })
   const db = client.db(process.env.DB_NAME)
 
@@ -20,22 +18,18 @@ async function connectToDatabase(uri: string): Promise<Db> {
   return db
 }
 
-export default async (_: NextApiRequest, res: NextApiResponse) => {
+export default async (req: NextApiRequest, res: NextApiResponse) => {
+  const isPost = req.method === "POST"
+  if (!isPost) return
+
+  const parsedBody = JSON.parse(req.body)
+
   try {
-    /**
-     * @NOTE
-     * - make sure the current IP is whitelisted on MongoDB
-     * - dashboard -> security -> Network Access
-     */
     const db = await connectToDatabase(process.env.CONNECTION_STRING)
     const collection = db.collection(process.env.COLLECTION_NAME)
-    const events: EventDocument[] = await collection
-      .find()
-      .skip(0)
-      .limit(10)
-      .toArray()
+    await collection.insertOne(parsedBody)
 
-    res.status(200).json(events)
+    res.status(200).json(parsedBody)
   } catch (err) {
     res.status(500).json({ statusCode: 500, message: err.message })
   }
