@@ -42,10 +42,12 @@ const EventById: NextPage<Props> = ({ event }) => {
         )}
       </div>
       <Link href="/events/[id]/edit" as={`/events/${id}/edit`}>
-        Edit
+        <a>Edit</a>
       </Link>
       <br />
-      <Link href="/events">Back to Events</Link>
+      <Link href="/events">
+        <a>Back to Events</a>
+      </Link>
     </Layout>
   )
 }
