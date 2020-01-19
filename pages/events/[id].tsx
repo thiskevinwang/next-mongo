@@ -56,7 +56,7 @@ EventById.getInitialProps = async ({ query }: NextPageContext) => {
   try {
     const { id } = query
     const event = await sampleFetchWrapper(
-      `http://localhost:3000/api/events/${Array.isArray(id) ? id[0] : id}`
+      `api/events/${Array.isArray(id) ? id[0] : id}`
     )
     return { event }
   } catch (err) {
