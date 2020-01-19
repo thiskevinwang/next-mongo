@@ -14,16 +14,40 @@ const EventById: NextPage<Props> = ({ event }) => {
   const router = useRouter()
   const { id } = router.query
   return (
-    <Layout title={event?.name ?? ""}>
+    <Layout title={"Event Details"}>
       <div>
         {event ? (
           <div>
-            <h1>{event.name}</h1>
+            <h1>Event Details</h1>
+            <h2>Name</h2>
+            <code
+              style={{
+                marginLeft: `1rem`,
+                marginRight: `1rem`,
+                display: `inline-block`,
+              }}
+            >
+              {event.name}
+            </code>
+
+            <h2>Description</h2>
             <p>{event.description}</p>
-            <div style={{ marginTop: `1rem`, marginBottom: `1rem` }}>
+            <div
+              style={{
+                marginTop: `1rem`,
+                marginBottom: `1rem`,
+              }}
+            >
               <h2>Properties</h2>
               {event.properties?.map((e, i) => (
-                <code key={i} style={{ margin: `1rem` }}>
+                <code
+                  key={i}
+                  style={{
+                    marginLeft: `1rem`,
+                    marginRight: `1rem`,
+                    display: `inline-block`,
+                  }}
+                >
                   {e}
                 </code>
               ))}
@@ -31,7 +55,14 @@ const EventById: NextPage<Props> = ({ event }) => {
             <div style={{ marginTop: `1rem`, marginBottom: `1rem` }}>
               <h2>Platforms</h2>
               {event.platforms?.map((e, i) => (
-                <code key={i} style={{ margin: `1rem` }}>
+                <code
+                  key={i}
+                  style={{
+                    marginLeft: `1rem`,
+                    marginRight: `1rem`,
+                    display: `inline-block`,
+                  }}
+                >
                   {e}
                 </code>
               ))}

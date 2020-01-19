@@ -41,18 +41,18 @@ const Add: NextPage = () => {
           return (
             <Form>
               <div>
-                <h3>Name</h3>
+                <h2>Name</h2>
                 <Field name={"name"} placeholder={"name"} />
               </div>
               <div>
-                <h3>Description</h3>
+                <h2>Description</h2>
                 <Field
                   name={"description"}
                   as="textarea"
                   placeholder={"description"}
                 />
               </div>
-              <h3>Properties</h3>
+              <h2>Properties</h2>
               <FieldArray
                 name="properties"
                 render={arrayHelpers => (
@@ -112,7 +112,7 @@ const Add: NextPage = () => {
                   </div>
                 )}
               />
-              <h3>Platforms</h3>
+              <h2>Platforms</h2>
               <FieldArray
                 name="platforms"
                 render={arrayHelpers => (
