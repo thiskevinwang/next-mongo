@@ -1,5 +1,6 @@
 import { NextPageContext, NextPage } from "next"
 import Link from "next/link"
+import { useRouter } from "next/router"
 
 import Layout from "../../components/Layout"
 import { sampleFetchWrapper } from "../../utils/sample-api"
@@ -10,8 +11,10 @@ interface Props {
 }
 
 const EventById: NextPage<Props> = ({ event }) => {
+  const router = useRouter()
+  const { id } = router.query
   return (
-    <Layout>
+    <Layout title={event?.name ?? ""}>
       <div>
         {event ? (
           <div>
@@ -38,6 +41,10 @@ const EventById: NextPage<Props> = ({ event }) => {
           <>Event not found</>
         )}
       </div>
+      <Link href="/events/[id]/edit" as={`/events/${id}/edit`}>
+        Edit
+      </Link>
+      <br />
       <Link href="/events">Back to Events</Link>
     </Layout>
   )
