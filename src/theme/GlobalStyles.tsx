@@ -15,8 +15,17 @@ export const GlobalStyleLight = createGlobalStyle`
     will-change: color;
   }
   a {
-    color: var(--geist-link-color);
+    color: var(--accents-5);
+    transition: color 200ms ease-in-out;
+    will-change: color;
+
+    text-decoration: none;
+
+    :hover {
+      color: var(--accents-8);
+    }
   }
+  
   code {
     margin-right: 0.5rem;
     padding-left: 0.25rem;
@@ -42,7 +51,15 @@ export const GlobalStyleDark = createGlobalStyle`
     will-change: color;
   }
   a {
-    color: var(--geist-link-color);
+    color: var(--accents-3);
+    transition: color 200ms ease-in-out;
+    will-change: color;
+
+    text-decoration: none;
+
+    :hover {
+      color: var(--accents-1);
+    }
   }
   code {
     margin-right: 0.5rem;
