@@ -22,7 +22,9 @@ const Events: React.FC = () => {
       <p>All Events</p>
       {(Array.isArray(data) ? data : []).map((e, i) => (
         <div key={e._id} style={{ background: i % 2 === 0 ? "lightgrey" : "" }}>
-          <Link href={`/events/${e._id}`}>{e.name}</Link>
+          <Link href={`/events/[id]`} as={`/events/${e._id}`}>
+            <a>{e.name}</a>
+          </Link>
         </div>
       ))}
       <p>

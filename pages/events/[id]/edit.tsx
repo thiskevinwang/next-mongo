@@ -1,36 +1,43 @@
-import React, { useRef } from "react"
-import { useRouter } from "next/router"
+import { useRef } from "react"
+import { NextPageContext, NextPage } from "next"
 import Link from "next/link"
-import { NextPage } from "next"
+import { useRouter } from "next/router"
 import { Formik, Form, Field, FieldArray } from "formik"
-import fetch from "isomorphic-unfetch"
 
-import Layout from "../../components/Layout"
+import Layout from "../../../components/Layout"
+import { sampleFetchWrapper } from "../../../utils/sample-api"
+import { EventDocument } from "../../../interfaces"
 
-const PLATFORMS = ["Web", "iOS"]
-const INITIAL_VALUES = {
-  name: "",
-  description: "",
-  properties: [] as string[],
-  platforms: [] as string[],
+interface Props {
+  event?: EventDocument
+  errors?: string
 }
 
-const Add: NextPage = () => {
+const PLATFORMS = ["Web", "iOS"]
+
+const EditEventById: NextPage<Props> = ({ event }) => {
   const router = useRouter()
+  const { id } = router.query
   const ref = useRef<HTMLInputElement>()
   return (
-    <Layout title="Analytics | Add">
-      <h1>Add a New Event</h1>
+    <Layout title="Analytics | Edit">
+      <h1>Edit</h1>
       <Formik
-        initialValues={INITIAL_VALUES}
+        initialValues={{
+          name: event?.name,
+          description: event?.description,
+          properties: event?.properties as string[],
+          platforms: event?.platforms as string[],
+        }}
         onSubmit={async (values, { setSubmitting }) => {
           try {
-            await fetch(`/api/add`, {
+            await fetch(`/api/edit/${id}`, {
               method: "post",
               body: JSON.stringify(values),
             })
+            console.log(values)
             setSubmitting(false)
-            router.push("/events")
+            router.push(`/events/${id}`)
           } catch (err) {
             console.error(err)
             setSubmitting(false)
@@ -126,7 +133,7 @@ const Add: NextPage = () => {
                           type="checkbox"
                           id={`platforms.${index}`}
                           name={`platforms.${index}`}
-                          checked={values.platforms.includes(_platform)}
+                          checked={values.platforms?.includes(_platform)}
                           onChange={(e: any) => {
                             const isChecked: boolean = e.target.checked
                             isChecked
@@ -162,4 +169,16 @@ const Add: NextPage = () => {
   )
 }
 
-export default Add
+EditEventById.getInitialProps = async ({ query }: NextPageContext) => {
+  try {
+    const { id } = query
+    const event = await sampleFetchWrapper(
+      `/api/events/${Array.isArray(id) ? id[0] : id}`
+    )
+    return { event }
+  } catch (err) {
+    return { errors: err.message }
+  }
+}
+
+export default EditEventById
