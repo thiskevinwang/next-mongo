@@ -3,7 +3,7 @@ import Link from "next/link"
 import Layout from "../../components/Layout"
 import useSwr from "swr"
 
-import { EventDocument } from "../../../interfaces"
+import { EventDocument } from "../../interfaces"
 
 function fetcher(url: string) {
   return fetch(url).then(r => r.json())

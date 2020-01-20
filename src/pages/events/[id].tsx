@@ -4,7 +4,7 @@ import { useRouter } from "next/router"
 import useSwr from "swr"
 
 import Layout from "../../components/Layout"
-import { EventDocument } from "../../../interfaces"
+import { EventDocument } from "../../interfaces"
 
 const EventById: NextPage = () => {
   const router = useRouter()

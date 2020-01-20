@@ -6,7 +6,7 @@ import { Formik, Form, Field, FieldArray } from "formik"
 
 import Layout from "../../../components/Layout"
 import { sampleFetchWrapper } from "../../../utils/sample-api"
-import { EventDocument } from "../../../../interfaces"
+import { EventDocument } from "../../../interfaces"
 
 interface Props {
   event?: EventDocument
