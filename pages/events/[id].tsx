@@ -1,18 +1,23 @@
-import { NextPageContext, NextPage } from "next"
+import { NextPage } from "next"
 import Link from "next/link"
 import { useRouter } from "next/router"
+import useSwr from "swr"
 
 import Layout from "../../components/Layout"
-import { sampleFetchWrapper } from "../../utils/sample-api"
 import { EventDocument } from "../../interfaces"
 
-interface Props {
-  event?: EventDocument
-}
-
-const EventById: NextPage<Props> = ({ event }) => {
+const EventById: NextPage = () => {
   const router = useRouter()
   const { id } = router.query
+
+  const { data: event, error } = useSwr<EventDocument>(
+    `/api/events/${id}`,
+    url => fetch(url).then(r => r.json())
+  )
+
+  if (!event) return <>"EventLoadinng"</>
+  if (error) return <>Error</>
+
   return (
     <Layout title={"Event Details"}>
       <div>
@@ -81,18 +86,6 @@ const EventById: NextPage<Props> = ({ event }) => {
       </Link>
     </Layout>
   )
-}
-
-EventById.getInitialProps = async ({ query }: NextPageContext) => {
-  try {
-    const { id } = query
-    const event = await sampleFetchWrapper(
-      `api/events/${Array.isArray(id) ? id[0] : id}`
-    )
-    return { event }
-  } catch (err) {
-    return { errors: err.message }
-  }
 }
 
 export default EventById
