@@ -1,4 +1,4 @@
-import fetch from 'isomorphic-unfetch'
+import fetch from "isomorphic-unfetch"
 
 export async function sampleFetchWrapper(
   input: RequestInfo,
