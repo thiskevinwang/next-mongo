@@ -6,7 +6,7 @@ import { NextPage } from "next"
 const IndexPage: NextPage = () => {
   return (
     <Layout title="Analytics | Home">
-      <h1>Home</h1>
+      <h2>Home</h2>
       <p>
         <Link href="/events">
           <a>Events</a>

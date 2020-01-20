@@ -17,6 +17,7 @@ const Layout: React.FunctionComponent<Props> = ({
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     </Head>
     <header>
+      <h1>Unified Analytics</h1>
       <nav>
         <Link href="/">
           <a>Home</a>
@@ -33,7 +34,6 @@ const Layout: React.FunctionComponent<Props> = ({
     </header>
     {children}
     <footer>
-      <hr />
       <span>🦶</span>
     </footer>
   </div>

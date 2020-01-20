@@ -18,7 +18,7 @@ const Events: React.FC = () => {
 
   return (
     <Layout title="Event | Next.js">
-      <h1>Analytics Events</h1>
+      <h2>Analytics Events</h2>
       <p>All Events</p>
       {(Array.isArray(data) ? data : []).map((e, i) => (
         <div key={e._id} style={{ background: i % 2 === 0 ? "lightgrey" : "" }}>

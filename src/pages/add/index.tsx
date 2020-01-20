@@ -20,7 +20,7 @@ const Add: NextPage = () => {
   const ref = useRef<HTMLInputElement>()
   return (
     <Layout title="Analytics | Add">
-      <h1>Add a New Event</h1>
+      <h2>Add a New Event</h2>
       <Formik
         initialValues={INITIAL_VALUES}
         onSubmit={async (values, { setSubmitting }) => {
@@ -41,18 +41,18 @@ const Add: NextPage = () => {
           return (
             <Form>
               <div>
-                <h2>Name</h2>
+                <h3>Name</h3>
                 <Field name={"name"} placeholder={"name"} />
               </div>
               <div>
-                <h2>Description</h2>
+                <h3>Description</h3>
                 <Field
                   name={"description"}
                   as="textarea"
                   placeholder={"description"}
                 />
               </div>
-              <h2>Properties</h2>
+              <h3>Properties</h3>
               <FieldArray
                 name="properties"
                 render={arrayHelpers => (
@@ -112,7 +112,7 @@ const Add: NextPage = () => {
                   </div>
                 )}
               />
-              <h2>Platforms</h2>
+              <h3>Platforms</h3>
               <FieldArray
                 name="platforms"
                 render={arrayHelpers => (

@@ -19,6 +19,8 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
      * `.findOne(ObjectId(id))`
      * */
     const event = await collection.findOne({ _id: new ObjectId(id as string) })
+    /** UTIL to test loading indicator */
+    // await new Promise(r => setTimeout(r, 3000))
 
     res.status(200).json(event)
   } catch (err) {

@@ -21,7 +21,7 @@ const EditEventById: NextPage<Props> = ({ event }) => {
   const ref = useRef<HTMLInputElement>()
   return (
     <Layout title="Analytics | Edit">
-      <h1>Edit</h1>
+      <h2>Edit</h2>
       <Formik
         initialValues={{
           name: event?.name,
@@ -48,18 +48,18 @@ const EditEventById: NextPage<Props> = ({ event }) => {
           return (
             <Form>
               <div>
-                <h2>Name</h2>
+                <h3>Name</h3>
                 <Field name={"name"} placeholder={"name"} />
               </div>
               <div>
-                <h2>Description</h2>
+                <h3>Description</h3>
                 <Field
                   name={"description"}
                   as="textarea"
                   placeholder={"description"}
                 />
               </div>
-              <h2>Properties</h2>
+              <h3>Properties</h3>
               <FieldArray
                 name="properties"
                 render={arrayHelpers => (
@@ -119,7 +119,7 @@ const EditEventById: NextPage<Props> = ({ event }) => {
                   </div>
                 )}
               />
-              <h2>Platforms</h2>
+              <h3>Platforms</h3>
               <FieldArray
                 name="platforms"
                 render={arrayHelpers => (

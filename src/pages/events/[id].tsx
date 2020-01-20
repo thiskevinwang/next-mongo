@@ -21,8 +21,8 @@ const EventById: NextPage = () => {
   return (
     <Layout title={"Event Details"}>
       <div>
-        <h1>Event Details</h1>
-        <h2>Name</h2>
+        <h2>Event Details</h2>
+        <h3>Name</h3>
         <code
           style={{
             marginLeft: `1rem`,
@@ -33,7 +33,7 @@ const EventById: NextPage = () => {
           {event.name}
         </code>
 
-        <h2>Description</h2>
+        <h3>Description</h3>
         <p>{event.description}</p>
         <div
           style={{
@@ -41,7 +41,7 @@ const EventById: NextPage = () => {
             marginBottom: `1rem`,
           }}
         >
-          <h2>Properties</h2>
+          <h3>Properties</h3>
           {event.properties?.map((e, i) => (
             <code
               key={i}
@@ -56,7 +56,7 @@ const EventById: NextPage = () => {
           ))}
         </div>
         <div style={{ marginTop: `1rem`, marginBottom: `1rem` }}>
-          <h2>Platforms</h2>
+          <h3>Platforms</h3>
           {event.platforms?.map((e, i) => (
             <code
               key={i}
