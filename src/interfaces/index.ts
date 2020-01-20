@@ -19,4 +19,5 @@ export interface EventDocument {
   description: string
   properties?: string[]
   platforms?: string[]
+  group?: string
 }

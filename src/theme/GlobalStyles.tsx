@@ -14,6 +14,18 @@ export const GlobalStyleLight = createGlobalStyle`
     transition: color 200ms ease-in-out;
     will-change: color;
   }
+  a {
+    color: var(--geist-link-color);
+  }
+  code {
+    margin-right: 0.5rem;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+    border-radius: 0.25rem;
+    background: var(--accents-2);
+    transition: background 200ms ease-in-out;
+    will-change: background;
+  }
 `
 export const GlobalStyleDark = createGlobalStyle`
   body {
@@ -28,5 +40,17 @@ export const GlobalStyleDark = createGlobalStyle`
     color: var(--light);
     transition: color 200ms ease-in-out;
     will-change: color;
+  }
+  a {
+    color: var(--geist-link-color);
+  }
+  code {
+    margin-right: 0.5rem;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+    border-radius: 0.25rem;
+    background: var(--accents-7);
+    transition: background 200ms ease-in-out;
+    will-change: background;
   }
 `
