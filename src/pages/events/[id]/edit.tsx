@@ -4,7 +4,7 @@ import Link from "next/link"
 import { useRouter } from "next/router"
 import { Formik, Form, Field, FieldArray } from "formik"
 
-import Layout from "../../../../components/Layout"
+import Layout from "../../../components/Layout"
 import { sampleFetchWrapper } from "../../../utils/sample-api"
 import { EventDocument } from "../../../../interfaces"
 

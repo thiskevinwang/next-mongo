@@ -5,7 +5,7 @@ import { NextPage } from "next"
 import { Formik, Form, Field, FieldArray } from "formik"
 import fetch from "isomorphic-unfetch"
 
-import Layout from "../../../components/Layout"
+import Layout from "../../components/Layout"
 
 const PLATFORMS = ["Web", "iOS"]
 const INITIAL_VALUES = {
