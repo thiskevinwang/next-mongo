@@ -33,7 +33,9 @@ export const ColorSchemeProvider = ({ children }: any) => {
   }, [setIsDarkMode, isDarkMode])
 
   /** placeholder */
-  const theme = isDarkMode ? { background: "black" } : { background: "white" }
+  const theme = isDarkMode
+    ? { borderBottom: "#555", isDarkMode: true }
+    : { borderBottom: "#aaa", isDarkMode: false }
 
   return (
     <ModeContext.Provider value={{ isDarkMode }}>
