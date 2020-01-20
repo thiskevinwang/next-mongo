@@ -59,38 +59,40 @@ const Events: React.FC = () => {
             <th>Group</th>
           </tr>
         </thead>
-        {(Array.isArray(data) ? data : []).map(e => (
-          <tr key={e._id}>
-            <td>
-              <code>
-                <Link href={`/events/[id]`} as={`/events/${e._id}`}>
-                  <a>{e.name}</a>
-                </Link>
-              </code>
-            </td>
-            <td>
-              {e.properties?.map(property => (
+        <tbody>
+          {(Array.isArray(data) ? data : []).map(e => (
+            <tr key={e._id}>
+              <td>
                 <code>
-                  {property}
-                  <br />
+                  <Link href={`/events/[id]`} as={`/events/${e._id}`}>
+                    <a>{e.name}</a>
+                  </Link>
                 </code>
-              ))}
-            </td>
-            <td>
-              {e.platforms?.map(platform => (
-                <code>{platform}</code>
-              ))}
-            </td>
-            <td>
-              <p>
-                <i>{e.description}</i>
-              </p>
-            </td>
-            <td>
-              <code>{e.group ?? "-"}</code>
-            </td>
-          </tr>
-        ))}
+              </td>
+              <td>
+                {e.properties?.map(property => (
+                  <code key={property}>
+                    {property}
+                    <br />
+                  </code>
+                ))}
+              </td>
+              <td>
+                {e.platforms?.map(platform => (
+                  <code key={platform}>{platform}</code>
+                ))}
+              </td>
+              <td>
+                <p>
+                  <i>{e.description}</i>
+                </p>
+              </td>
+              <td>
+                <code>{e.group ?? "-"}</code>
+              </td>
+            </tr>
+          ))}
+        </tbody>
       </Table>
       <p>
         <Link href="/">
