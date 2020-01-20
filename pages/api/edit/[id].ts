@@ -10,9 +10,9 @@ export default async function editEvent(
   const { id } = req.query
   const parsedBody = JSON.parse(req.body)
   try {
-    const db = await connectToDatabase(process.env.CONNECTION_STRING)
+    const db = await connectToDatabase(process.env.CONNECTION_STRING as string)
 
-    const collection = db.collection(process.env.COLLECTION_NAME)
+    const collection = db.collection(process.env.COLLECTION_NAME as string)
     const updated = await collection.findOneAndUpdate(
       { _id: new ObjectId(id as string) },
       {

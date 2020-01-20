@@ -27,8 +27,8 @@ export default async (_: NextApiRequest, res: NextApiResponse) => {
      * - make sure the current IP is whitelisted on MongoDB
      * - dashboard -> security -> Network Access
      */
-    const db = await connectToDatabase(process.env.CONNECTION_STRING)
-    const collection = db.collection(process.env.COLLECTION_NAME)
+    const db = await connectToDatabase(process.env.CONNECTION_STRING as string)
+    const collection = db.collection(process.env.COLLECTION_NAME as string)
     const events: EventDocument[] = await collection
       .find()
       .skip(0)

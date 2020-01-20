@@ -6,8 +6,8 @@ import { connectToDatabase } from "../../../utils/connectToDatabase"
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   const { id } = req.query
   try {
-    const db = await connectToDatabase(process.env.CONNECTION_STRING)
-    const collection = db.collection(process.env.COLLECTION_NAME)
+    const db = await connectToDatabase(process.env.CONNECTION_STRING as string)
+    const collection = db.collection(process.env.COLLECTION_NAME as string)
     /**
      * `findOne(query, projection)`
      * @see https://docs.mongodb.com/manual/reference/method/db.collection.findOne/
