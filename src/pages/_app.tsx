@@ -5,7 +5,8 @@ import { ColorSchemeProvider } from "../theme"
  * Please move all global CSS imports to src/pages/_app.tsx.
  * Read more: https://err.sh/next.js/css-global
  */
-import "../../global.css"
+import "../../_global.css"
+import "../../_fonts.css"
 
 /**
  * @TODO type these!

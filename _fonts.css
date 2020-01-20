@@ -129,13 +129,3 @@
   font-weight: 600;
   font-style: italic;
 }
-
-* {
-  /* font-family: "Circular-Pro"; */
-  /* font-family: "MercuryTextG4"; */
-}
-
-:root {
-  --dark: #222222;
-  --light: #ffffff;
-}
