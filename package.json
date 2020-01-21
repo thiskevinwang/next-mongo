@@ -8,6 +8,7 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
+    "export": "next export",
     "type-check": "tsc"
   },
   "dependencies": {
@@ -19,6 +20,7 @@
     "next": "^9.2.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "styled-components": "^5.0.0",
     "swr": "^0.1.16"
   },
   "devDependencies": {
@@ -27,8 +29,23 @@
     "@types/node": "^13.1.8",
     "@types/react": "^16.9.17",
     "@types/react-dom": "^16.9.4",
+    "@types/styled-components": "^4.4.2",
+    "babel-plugin-styled-components": "^1.10.6",
+    "husky": "^4.0.10",
+    "lint-staged": "^10.0.0",
     "prettier": "^1.19.1",
     "typescript": "3.7.5"
   },
-  "license": "ISC"
+  "license": "ISC",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,css,json,md,ts,tsx}": [
+      "prettier --write",
+      "git add"
+    ]
+  }
 }
