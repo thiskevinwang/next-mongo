@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next"
 
-import { connectToDatabase } from "../../../utils/connectToDatabase"
+import { connectToDatabase } from "../../../../utils/connectToDatabase"
 import { ObjectId } from "mongodb"
 
 export default async function editEvent(

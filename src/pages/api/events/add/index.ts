@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next"
 
-import { connectToDatabase } from "../../../utils/connectToDatabase"
+import { connectToDatabase } from "../../../../utils/connectToDatabase"
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   const isPost = req.method === "POST"
