@@ -6,8 +6,11 @@ import useSwr from "swr"
 import { EventDocument } from "../../interfaces"
 import Layout from "../../components/Layout"
 
+import { Delete, Edit } from "../../../public/svgs"
+
 const Table = styled.table`
   border-collapse: collapse;
+  border: 1px solid ${props => props.theme.borderBottom};
 
   thead {
     text-align: left;
@@ -57,6 +60,7 @@ const Events: React.FC = () => {
             <th>Platforms</th>
             <th>Description</th>
             <th>Group</th>
+            <th>-</th>
           </tr>
         </thead>
         <tbody>
@@ -82,13 +86,23 @@ const Events: React.FC = () => {
                   <code key={platform}>{platform}</code>
                 ))}
               </td>
-              <td>
+              <td style={{ maxWidth: `20rem` }}>
                 <p>
                   <i>{e.description}</i>
                 </p>
               </td>
               <td>
                 <code>{e.group ?? "-"}</code>
+              </td>
+              <td>
+                <Link href={`/events/[id]/edit`} as={`/events/${e._id}/edit`}>
+                  <a style={{ marginRight: `0.5rem` }}>
+                    <Edit />
+                  </a>
+                </Link>
+                <a style={{ marginRight: `0.5rem`, cursor: `pointer` }}>
+                  <Delete />
+                </a>
               </td>
             </tr>
           ))}
