@@ -6,7 +6,7 @@ import useSwr from "swr"
 import { EventDocument } from "../../interfaces"
 import Layout from "../../components/Layout"
 
-import { Delete, Edit } from "../../../public/svgs"
+import { Delete, Edit } from "../../svgs"
 
 const Table = styled.table`
   border-collapse: collapse;

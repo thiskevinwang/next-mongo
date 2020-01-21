@@ -1,8 +1,8 @@
 import { Field } from "formik"
 import styled from "styled-components"
 
-import { Checkbox } from "../../../public/svgs/Checkbox"
-import { CheckboxFill } from "../../../public/svgs/CheckboxFill"
+import { Checkbox } from "../../svgs/Checkbox"
+import { CheckboxFill } from "../../svgs/CheckboxFill"
 
 const StyledField = styled(Field)`
   /** styles just for the checkbox icon */
