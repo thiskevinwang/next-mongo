@@ -37,7 +37,7 @@ const EditEventById: NextPage<Props> = ({ event }) => {
             })
             console.log(values)
             setSubmitting(false)
-            router.push(`/events/${id}`)
+            router.back()
           } catch (err) {
             console.error(err)
             setSubmitting(false)
