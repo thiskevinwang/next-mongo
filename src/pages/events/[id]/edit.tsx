@@ -5,6 +5,7 @@ import { useRouter } from "next/router"
 import { Formik, Form, Field, FieldArray } from "formik"
 
 import Layout from "../../../components/Layout"
+import { CheckboxInput } from "../../../components/Form/CheckboxInput"
 import { sampleFetchWrapper } from "../../../utils/sample-api"
 import { EventDocument } from "../../../interfaces"
 
@@ -129,7 +130,7 @@ const EditEventById: NextPage<Props> = ({ event }) => {
                         key={_platform + index}
                         style={{ marginRight: `1rem` }}
                       >
-                        <Field
+                        <CheckboxInput
                           type="checkbox"
                           id={`platforms.${index}`}
                           name={`platforms.${index}`}

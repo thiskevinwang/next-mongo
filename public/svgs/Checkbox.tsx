@@ -1,7 +1,7 @@
 /**
  * @TODO maybe this can be in /src vs. /public
  */
-export const Edit = () => (
+export const Checkbox = () => (
   <svg
     viewBox="0 0 24 24"
     width="20"
@@ -13,7 +13,6 @@ export const Edit = () => (
     fill="none"
     shapeRendering="geometricPrecision"
   >
-    <path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7" />
-    <path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z" />
+    <path d="M16.09 3H7.91A4.91 4.91 0 003 7.91v8.18A4.909 4.909 0 007.91 21h8.18A4.909 4.909 0 0021 16.09V7.91A4.909 4.909 0 0016.09 3z" />
   </svg>
 )
