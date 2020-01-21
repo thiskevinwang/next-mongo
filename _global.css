@@ -54,3 +54,12 @@ code {
   font-family: var(--font-mono);
   font-size: 0.75rem;
 }
+
+body {
+  max-width: 970px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  overflow-x: scroll;
+}

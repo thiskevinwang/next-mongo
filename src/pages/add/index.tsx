@@ -6,6 +6,7 @@ import { Formik, Form, Field, FieldArray } from "formik"
 import fetch from "isomorphic-unfetch"
 
 import Layout from "../../components/Layout"
+import { CheckboxInput } from "../../components/Form/CheckboxInput"
 
 const PLATFORMS = ["Web", "iOS"]
 const INITIAL_VALUES = {
@@ -122,7 +123,7 @@ const Add: NextPage = () => {
                         key={_platform + index}
                         style={{ marginRight: `1rem` }}
                       >
-                        <Field
+                        <CheckboxInput
                           type="checkbox"
                           id={`platforms.${index}`}
                           name={`platforms.${index}`}
