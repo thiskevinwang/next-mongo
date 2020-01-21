@@ -4,9 +4,6 @@ const Svg = styled.svg`
   fill: var(${props => (props.theme.isDarkMode ? `--light` : `--dark`)});
 `
 
-/**
- * @TODO maybe this can be in /src vs. /public
- */
 export const CheckboxFill = () => (
   <Svg
     viewBox="0 0 24 24"

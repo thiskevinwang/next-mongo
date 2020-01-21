@@ -1,6 +1,3 @@
-/**
- * @TODO maybe this can be in /src vs. /public
- */
 export const Edit = () => (
   <svg
     viewBox="0 0 24 24"

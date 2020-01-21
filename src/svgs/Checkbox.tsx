@@ -1,6 +1,3 @@
-/**
- * @TODO maybe this can be in /src vs. /public
- */
 export const Checkbox = () => (
   <svg
     viewBox="0 0 24 24"
