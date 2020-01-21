@@ -25,7 +25,7 @@ const Add: NextPage = () => {
         initialValues={INITIAL_VALUES}
         onSubmit={async (values, { setSubmitting }) => {
           try {
-            await fetch(`/api/add`, {
+            await fetch(`/api/events/add`, {
               method: "post",
               body: JSON.stringify(values),
             })

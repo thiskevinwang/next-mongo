@@ -31,7 +31,7 @@ const EditEventById: NextPage<Props> = ({ event }) => {
         }}
         onSubmit={async (values, { setSubmitting }) => {
           try {
-            await fetch(`/api/edit/${id}`, {
+            await fetch(`/api/events/edit/${id}`, {
               method: "post",
               body: JSON.stringify(values),
             })
