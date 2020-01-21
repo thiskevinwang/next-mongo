@@ -3,7 +3,7 @@
   "author": {
     "name": "Kevin Wang"
   },
-  "version": "v0.0.1-rc.5",
+  "version": "v0.0.1-rc.6",
   "scripts": {
     "dev": "next",
     "build": "next build",
