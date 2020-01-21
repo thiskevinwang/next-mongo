@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "build": {
+    "env": {
+      "CONNECTION_STRING": "@connection_string",
+      "DB_NAME": "@db_name",
+      "COLLECTION_NAME": "@collection_name"
+    }
+  },
+  "env": {
+    "CONNECTION_STRING": "@connection_string",
+    "DB_NAME": "@db_name",
+    "COLLECTION_NAME": "@collection_name"
+  }
+}
