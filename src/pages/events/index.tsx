@@ -50,8 +50,8 @@ const Events: React.FC = () => {
   if (error) return <>`Error: ${error}`</>
 
   return (
-    <Layout title="Event | Next.js">
-      <h2>Analytics Events</h2>
+    <Layout title="Events">
+      <h2>Events</h2>
       <Table>
         <thead>
           <tr>

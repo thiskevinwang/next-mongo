@@ -19,7 +19,7 @@ const Add: NextPage = () => {
   const router = useRouter()
   const ref = useRef<HTMLInputElement>()
   return (
-    <Layout title="Analytics | Add">
+    <Layout title="Add">
       <h2>Add a New Event</h2>
       <Formik
         initialValues={INITIAL_VALUES}

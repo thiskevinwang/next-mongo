@@ -20,7 +20,7 @@ const EditEventById: NextPage<Props> = ({ event }) => {
   const { id } = router.query
   const ref = useRef<HTMLInputElement>()
   return (
-    <Layout title="Analytics | Edit">
+    <Layout title="Edit">
       <h2>Edit</h2>
       <Formik
         initialValues={{
