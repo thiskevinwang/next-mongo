@@ -35,6 +35,8 @@
   --shadow-hover: 0 30px 60px rgba(0, 0, 0, 0.12);
   --shadow-sticky: 0 12px 10px -10px rgba(0, 0, 0, 0.12);
 
+  --geist-gap: 16pt;
+
   --geist-cyan: #79ffe1;
   --geist-cyan-dark: #50e3c2;
   --geist-purple: #f81ce5;
